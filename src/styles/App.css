@@ -1,0 +1,13 @@
+.App {
+  box-sizing: border-box;
+  min-height: 100vh;
+  height: 100%;
+  background: linear-gradient(#e85127, #d7e81e, #1ec6e8, #8f036c);
+  text-align: center;
+  width: 100%;
+  color: white;
+}
+
+p {
+  margin: 0;
+}
