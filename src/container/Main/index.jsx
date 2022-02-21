@@ -228,17 +228,15 @@ const Main = () => {
   };
 
   const mintDomain = async () => {
-    // Don't run if the domain is empty
     if (!domain) {
       return;
     }
-    // Alert the user if the domain is too short
+
     if (domain.length < 3) {
       alert("Domain must be at least 3 characters long");
       return;
     }
-    // Calculate price based on length of domain (change this to match your contract)
-    // 3 chars = 0.5 MATIC, 4 chars = 0.3 MATIC, 5 or more = 0.1 MATIC
+
     const price =
       domain.length === 3 ? "0.5" : domain.length === 4 ? "0.3" : "0.1";
     console.log("Minting domain", domain, "with price", price);
@@ -258,10 +256,8 @@ const Main = () => {
         let tx = await contract.register(domain, {
           value: ethers.utils.parseEther(price),
         });
-        // Wait for the transaction to be mined
-        const receipt = await tx.wait();
 
-        // Check if the transaction was successfully completed
+        const receipt = await tx.wait();
         if (receipt.status === 1) {
           console.log(
             "Domain minted! https://mumbai.polygonscan.com/tx/" + tx.hash
