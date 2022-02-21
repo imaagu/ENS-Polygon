@@ -277,8 +277,6 @@ const Main = () => {
             "Record set! https://mumbai.polygonscan.com/tx/" + tx.hash
           );
 
-          // Call fetchMints after 2 seconds
-
           setRecord("");
           setDomain("");
           setMinting(false);
